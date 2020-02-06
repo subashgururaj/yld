@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mock-endpoints
+spec:
+  replicas: 3
+  selector:
+    app: mock-endpoints
+  template:
+    metadata:
+      name: mock-endpoints
+      labels:
+       app: mock-endpoints
+    spec:
+      containers:
+      - name: mock-endpoints
+        image: mock-endpoints
+        ports: 
+        - containerPort: 8079
